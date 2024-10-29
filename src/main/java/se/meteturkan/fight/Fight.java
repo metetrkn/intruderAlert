@@ -15,13 +15,20 @@ public class Fight {
 
 
     // Declaring burglar instance as a concrete subclass
-    private static Burglar burglar = new Burglar("Burglar", "Burglar", 80, 30, 40);
+    private static Burglar burglar = new Burglar("Burglar", "Burglar", 80, 30, 4);
     private Residence residence; // Declare residence without initializing
+
+
+    private final int burglarBaseHealth; // Store initial health of the burglar
+    private int  residenceBaseHealth; // Store initial health of the residence
 
 
     public Fight(OptionController optionController, Scanner scanner) {
         this.optionController = optionController;
         this.scanner = scanner;
+        this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
+        // Initialize the base health of residence to 0 initially, it will be set in initializeResidence()
+        this.residenceBaseHealth = 0;
     }
 
 
@@ -29,7 +36,10 @@ public class Fight {
     private void initializeResidence() {
         System.out.print("Enter the name of the residence: ");
         String residenceName = scanner.nextLine(); // Get user input for the residence name
-        residence = new Residence(residenceName, "Residence", 100, 50, 30); // Initialize with user input
+        residence = new Residence(residenceName, "Residence", 100, 50, 4); // Initialize with user input
+
+        // Set residenceBaseHealth to the initial health of residence
+        this.residenceBaseHealth = residence.getHealt();
     }
 
 
@@ -44,8 +54,9 @@ public class Fight {
 
         // Check if defender is still alive
         if (defender.isConscious()) {
-            System.out.println(defender.getName() + " has " + defender.getHealt()
-                    + "/" + defenderBaseHealth + " health left.\n");
+            int currentHealth = defender.getHealt();
+            int baseHealth = (defender == burglar) ? burglarBaseHealth : residenceBaseHealth;
+            System.out.println(defender.getName() + " has " + currentHealth + "/" + baseHealth + " health left.\n");
         }
     }
 
