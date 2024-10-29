@@ -1,5 +1,6 @@
 package se.meteturkan.characters;
 
+import java.util.Random;
 
 public abstract class Entity {
     // Abstract class attributes
@@ -8,6 +9,7 @@ public abstract class Entity {
     private int health;
     private int attackPoint;
     private int defensePoint;
+    private int damage;
 
     // Constructor
     public Entity(String name, String role, int health, int attackPoint, int defensePoint) {
@@ -32,7 +34,7 @@ public abstract class Entity {
     }
 
     public int getAttackPoint() {
-        return attackPoint;
+        return damage;
     }
 
     public int getDefensePoint() {
@@ -40,16 +42,23 @@ public abstract class Entity {
     }
 
 
-
     // Method to perform an attack on another entity
     public void punch(Entity toPunch) {
-        int damage = this.attackPoint - toPunch.getDefensePoint();
-        if (damage > 0) {
-            toPunch.takeHit(damage);
-        } else {
-            toPunch.takeHit(0); // No damage if attack is less than or equal to defense
+        // Calculate base damage
+        int baseDamage = this.attackPoint - toPunch.getDefensePoint();
+
+        // Generate a random multiplier between 0.5 and 1.5
+        Random random = new Random();
+        double damageMultiplier = 0.5 + (random.nextDouble()); // random value in [0.5, 1.5]
+
+        // Calculate final damage applying the multiplier
+        damage = (int) Math.max(baseDamage * damageMultiplier, 0); // Ensure damage is non-negative
+
+        // Apply damage to the target entity
+        toPunch.takeHit(damage);
+
+        System.out.println("punch method " + damage);
         }
-    }
 
     // Method to reduce health when hit
     public void takeHit(int damage) {
@@ -65,8 +74,8 @@ public abstract class Entity {
     }
 
     /**
-     * public void increaseDamage(Material material, int damage) {
-     *         Increases damage of players when material in rooms found
+     * public void setDamage(Material material, int damage) {
+     *         Increases damage of residance when fry panna found
      *     }
      */
 
