@@ -1,0 +1,134 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.2">
+  <diagram name="Page-1" id="PU1DePfKREHedeROJlcz">
+    <mxGraphModel dx="1195" dy="588" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-1" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;BASIC NEEDS&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-&amp;nbsp; &amp;nbsp; Move in rooms (test at least&amp;nbsp; rooms)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&amp;nbsp; &amp;nbsp; Fight player, burglar&amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; . Burglar can stay in only hall OR&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; . Burglar can move between rooms&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-&amp;nbsp; &amp;nbsp; After fight, player should call police if still alive&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-&amp;nbsp; &amp;nbsp; Create 2 project&amp;nbsp; &amp;nbsp;1- main&amp;nbsp; &amp;nbsp; 2- fighting&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;-&amp;nbsp; &amp;nbsp; Create least 2 packages, 1 for characters and 1 for main in main project&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;-&amp;nbsp; &amp;nbsp; Use Junit tests (to test fighting method)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&amp;nbsp; &amp;nbsp; When player goes to kitchen it should increase damage, this should print out, but damage increase happens only once&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&amp;nbsp; &amp;nbsp; It should printout rooms descriptions&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;-&amp;nbsp; &amp;nbsp; Make the soundtrack run&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;align=left;" parent="1" vertex="1">
+          <mxGeometry x="10" width="409" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-3" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;b&gt;&lt;font style=&quot;font-size: 35px;&quot;&gt;STORY&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;In this project, you will create a game set in a house at night. A resident, who has fallen asleep on the sofa in the living room, wakes up to a noise and encounters a burglar in one of the rooms. A fight breaks out, and the objective is to win it.&lt;br&gt;&lt;br&gt;&lt;br&gt;To win the fight, the resident must first find a frying pan in the kitchen. The frying pan allows them to inflict greater damage. Then, the police should be informed about the burglar. Once this is achieved, the game ends.&lt;br&gt;&lt;br&gt;&lt;br&gt;This game is based on the adventure game you created through exercises in this course. There is a central location in the game and four other rooms. From the central location, you can move to any of the other four rooms. From the other four rooms, it is only possible to go back to the central location.&lt;br&gt;&lt;br&gt;&lt;br&gt;You may use parts of the code and structure from the adventure game you previously developed as a base for this project. Many of the mechanics you have already implemented, such as moving between locations and handling fights, can be reused and adapted for the new game. Use a `while` loop for the game, which runs depending on whether a variable is `true` or `false` (we called this variable `running` in the exercises)." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;" parent="1" vertex="1">
+          <mxGeometry x="430" width="420" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="RcS7vIx1_4_sbcJSQHpD-4" target="RcS7vIx1_4_sbcJSQHpD-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-4" value="&lt;div&gt;VARDAGSRUM&lt;/div&gt;PLAYERS BASE" style="ellipse;whiteSpace=wrap;html=1;fillColor=#bac8d3;strokeColor=#23445d;" parent="1" vertex="1">
+          <mxGeometry x="1215" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-5" value="&lt;div&gt;HALL&lt;/div&gt;BURGLAR BASE" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="1420" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-6" value="KITCHEN&lt;div&gt;- frying pan&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="990" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-7" value="SOVRUM" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="1215" y="260" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-8" value="BATHROOM&lt;div&gt;- scissor&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="1220" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.45;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="RcS7vIx1_4_sbcJSQHpD-4" target="RcS7vIx1_4_sbcJSQHpD-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1275" y="100" />
+              <mxPoint x="1274" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-13" value="HALL-2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="990" y="260" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="RcS7vIx1_4_sbcJSQHpD-13" target="RcS7vIx1_4_sbcJSQHpD-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="270" as="sourcePoint" />
+            <mxPoint x="970" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-15" value="EMPTY ROOM" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="1420" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-16" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" target="RcS7vIx1_4_sbcJSQHpD-15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1479.5" y="120" as="sourcePoint" />
+            <mxPoint x="1480" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-17" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="RcS7vIx1_4_sbcJSQHpD-8" target="RcS7vIx1_4_sbcJSQHpD-15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="270" as="sourcePoint" />
+            <mxPoint x="970" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="RcS7vIx1_4_sbcJSQHpD-13" target="RcS7vIx1_4_sbcJSQHpD-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="270" as="sourcePoint" />
+            <mxPoint x="970" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-19" value="&lt;b&gt;Entity / Abstract&lt;/b&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" parent="1" vertex="1">
+          <mxGeometry x="2055" y="20" width="140" height="150" as="geometry">
+            <mxRectangle x="2055" y="20" width="130" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-20" value="-Role, String (i.e. Burglar or Player)" style="text;strokeColor=#d79b00;fillColor=#ffe6cc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="RcS7vIx1_4_sbcJSQHpD-19" vertex="1">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-21" value="- Health, Int" style="text;strokeColor=#b85450;fillColor=#f8cecc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="RcS7vIx1_4_sbcJSQHpD-19" vertex="1">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-31" value="- Attack Point, int" style="text;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="RcS7vIx1_4_sbcJSQHpD-19" vertex="1">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-22" value="- Defence Point, int" style="text;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="RcS7vIx1_4_sbcJSQHpD-19" vertex="1">
+          <mxGeometry y="120" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-23" value="Player, Class" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" parent="1" vertex="1">
+          <mxGeometry x="1890" y="340" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-26" value="extends abstract Entity" style="text;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="RcS7vIx1_4_sbcJSQHpD-23" vertex="1">
+          <mxGeometry y="30" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-27" value="Burglar, Class" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" parent="1" vertex="1">
+          <mxGeometry x="2210" y="345" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-28" value="extends abstract Entity" style="text;strokeColor=#d79b00;fillColor=#ffe6cc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="RcS7vIx1_4_sbcJSQHpD-27" vertex="1">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RcS7vIx1_4_sbcJSQHpD-31" target="RcS7vIx1_4_sbcJSQHpD-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RcS7vIx1_4_sbcJSQHpD-31" target="RcS7vIx1_4_sbcJSQHpD-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-41" value="+  punch(Entity toPunch)" style="text;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2055" y="170" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-42" value="+ takeHit(int damage)" style="text;strokeColor=#9673a6;fillColor=#e1d5e7;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2055" y="200" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-43" value="+&amp;nbsp; isConscious()" style="text;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="2055" y="230" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RcS7vIx1_4_sbcJSQHpD-45" value="&lt;b&gt;1. punch(Entity toPunch)&lt;br&gt;void punch(Entity toPunch)&lt;br&gt;Beskrivning: Denna metod utför en attack på en annan entitet (toPunch). Metoden ska anropa&lt;br&gt;toPunch.takeHit(int damage) för att minska målets hälsopoäng med attackerarens skada.&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;2. takeHit(int damage)&lt;br&gt;void takeHit(int damage)&lt;br&gt;Beskrivning: Denna metod minskar entitetens health-attribut med värdet på parametern&lt;br&gt;damage.&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;3. isConscious()&lt;br&gt;boolean isConscious()&lt;br&gt;Beskrivning: Denna metod returnerar true om entitetens hälsa (health) är över 0, annars&lt;br&gt;returnerar den false.&amp;nbsp;&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#76608a;fontColor=#ffffff;strokeColor=#432D57;align=left;" parent="1" vertex="1">
+          <mxGeometry x="1580" y="10" width="260" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="KygJE9FnCK3tQTNxRo2p-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 56px;&quot;&gt;(ROOMS)&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+          <mxGeometry x="915" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KygJE9FnCK3tQTNxRo2p-2" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="RcS7vIx1_4_sbcJSQHpD-4" target="RcS7vIx1_4_sbcJSQHpD-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="310" as="sourcePoint" />
+            <mxPoint x="1225" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KygJE9FnCK3tQTNxRo2p-3" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="RcS7vIx1_4_sbcJSQHpD-5" target="RcS7vIx1_4_sbcJSQHpD-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1285" y="210" as="sourcePoint" />
+            <mxPoint x="1285" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
