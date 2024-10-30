@@ -29,7 +29,7 @@ public class Game {
         int result = controller.checker(1, 2);
 
         if (result == 1) {
-            menu.printStringWithDelay("Logging in...", 30); // Delayed printing out
+            menu.printStringWithDelay("\nLogging in...", 100); // Delayed printing out
         } else {
             menu.exitSystem(); // Exiting message
             System.exit(0); // Closing the system
