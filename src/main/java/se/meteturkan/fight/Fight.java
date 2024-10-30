@@ -14,13 +14,14 @@ public class Fight {
     private static Scanner scanner;
 
 
+
     // Declaring burglar instance as a concrete subclass
-    private static Burglar burglar = new Burglar("Burglar", "Burglar", 80, 30, 4);
+    private static Burglar burglar = new Burglar("Burglar", "Burglar", 80, 10, 4);
     private Residence residence; // Declare residence without initializing
 
 
-    private final int burglarBaseHealth; // Store initial health of the burglar
-    private int  residenceBaseHealth; // Store initial health of the residence
+    private final float burglarBaseHealth; // Store initial health of the burglar
+    private float  residenceBaseHealth; // Store initial health of the residence
 
 
     public Fight(OptionController optionController, Scanner scanner) {
@@ -36,7 +37,7 @@ public class Fight {
     private void initializeResidence() {
         System.out.print("Enter the name of the residence: ");
         String residenceName = scanner.nextLine(); // Get user input for the residence name
-        residence = new Residence(residenceName, "Residence", 100, 50, 4); // Initialize with user input
+        residence = new Residence(residenceName, "Residence", 100, 10, 4); // Initialize with user input
 
         // Set residenceBaseHealth to the initial health of residence
         this.residenceBaseHealth = residence.getHealt();
@@ -45,8 +46,10 @@ public class Fight {
 
     // Execute an attack from attacker to defender
     private void executeAttack(Entity attacker, Entity defender) {
-        final int defenderBaseHealth = defender.getHealt();
         attacker.punch(defender); // Attacker attacks defender
+
+        System.out.println("✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨" +
+                "\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F");
 
         // Print the attack action
         System.out.println("\n" + attacker.getName() + " hits ===> " + defender.getName() + " ("
@@ -54,11 +57,15 @@ public class Fight {
 
         // Check if defender is still alive
         if (defender.isConscious()) {
-            int currentHealth = defender.getHealt();
-            int baseHealth = (defender == burglar) ? burglarBaseHealth : residenceBaseHealth;
+            float currentHealth = defender.getHealt();
+            float baseHealth = (defender == burglar) ? burglarBaseHealth : residenceBaseHealth;
             System.out.println(defender.getName() + " has " + currentHealth + "/" + baseHealth + " health left.\n");
         }
+
+        System.out.println("✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨" +
+                "\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F");
     }
+
 
 
     // Execute one round of fighting, residence attacks first!

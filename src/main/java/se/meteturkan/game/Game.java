@@ -4,6 +4,7 @@ import java.util.Scanner;
 import se.meteturkan.common.OptionController;
 import se.meteturkan.fight.Fight;
 
+
 public class Game {
     private Scanner scanner; // Declare scanner for dependency injection
     private OptionController controller; // Declare OptionController for dependency injection
