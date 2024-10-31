@@ -47,6 +47,11 @@ public abstract class Entity {
         this.attackPoint = newAmount;
     }
 
+    // Defence point setter method
+    public void setDefensePoint(float newAmount) {
+        this.defensePoint = newAmount;
+    }
+
     // Method to perform an attack on another entity
     public void punch(Entity toPunch) {
         // Each turn, there is a 20% chance for a special move to occur for both characters
@@ -85,6 +90,15 @@ public abstract class Entity {
     }
 
 
+    // Method to decrease defence of entities
+    public void increaseDefence(float change) {
+        setDefensePoint(getDefensePoint() + change);
+    }
+
+    // Method to increase the attack point of the burglar
+    public void increaseDamage(float change) {
+        setAttackPoint(getAttackPoint() + change);
+    }
 
     // Special move abstract method, each character will have their own unique move
     public abstract void specialMove(Entity toPunch);

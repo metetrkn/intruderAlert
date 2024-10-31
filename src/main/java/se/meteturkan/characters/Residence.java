@@ -9,9 +9,11 @@ public class Residence extends Entity {
 
     @Override
     public void specialMove(Entity toPunch) {
-        System.out.println("###############################33!");
+        System.out.println("Residence finds his motorcycle helmet on the corner!\n" +
+                "His defence increases drastically!");
+
+        System.out.println("previous defence point: " + getDefensePoint());
+        increaseDefence(20);
+        System.out.println("after defence: " + getDefensePoint());
     }
-
-
-
 }

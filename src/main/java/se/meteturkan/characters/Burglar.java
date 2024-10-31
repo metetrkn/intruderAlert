@@ -14,11 +14,4 @@ public class Burglar extends Entity {
         increaseDamage(20);
         System.out.println(getAttackPoint());
     }
-
-    // Method to increase the attack point of the burglar
-    public void increaseDamage(float increase) {
-        setAttackPoint(getAttackPoint() + increase);
-    }
-
-
 }
