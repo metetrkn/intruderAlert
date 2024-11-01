@@ -9,7 +9,7 @@ public abstract class Entity {
     private float health;
     private float attackPoint;
     private float defensePoint;
-    private float damage;
+    private float damage = attackPoint;
     private Random random = new Random(); // Instantiating random object
 
     // Constructor
@@ -26,16 +26,12 @@ public abstract class Entity {
         return name;
     }
 
-    public String getRole() {
-        return role;
-    }
-
     public float getHealt() {
         return health;
     }
 
     public float getAttackPoint() {
-        return attackPoint;
+        return damage;
     }
 
     public float getDefensePoint() {
