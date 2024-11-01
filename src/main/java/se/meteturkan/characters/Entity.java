@@ -52,27 +52,40 @@ public abstract class Entity {
         this.defensePoint = round.roundToTwoDecimals(newAmount);
     }
 
-    byte specialMoveTurns = 0; // Turn after special moves activated
-    boolean keyRevertSpecialMove = false; // Key to activate reversSpecialMove method
-
     // Method to perform an attack on another entity
     public void punch(Entity toPunch) {
-        // Each turn, there is a 20% chance for a special move to occur for both characters
-        if (random.nextInt(5) == 1) {
-            keyRevertSpecialMove = true; // key to start counting
+// 20% chance for a special move
+        if (!specialMoveActive && random.nextInt(4) == 0) {
+            specialMoveActive = true;
             specialMove(toPunch);
         }
 
-        // Checks in here if 3 turns happaned
-        if (keyRevertSpecialMove) {
+        // Track turns if special move is active1
+        if (specialMoveActive) {
             specialMoveTurns++;
+            if (specialMoveTurns == 3) {
+                revertSpecialMove(toPunch);
+                specialMoveActive = false;
+                specialMoveTurns = 0;
+            }
         }
 
-        if (specialMoveTurns == 3) {
-            revertSpecialMove(toPunch);
-            keyRevertSpecialMove = false; // key to stop counting
-            specialMoveTurns = 0; // setting special move turns to 0 for next possible usage
-        }
+//        // Each turn, there is a 20% chance for a special move to occur for both characters
+//        if (random.nextInt(5) == 1) {
+//            keyRevertSpecialMove = true; // key to start counting
+//            specialMove(toPunch);
+//        }
+//
+//        // Checks in here if 3 turns happaned
+//        if (keyRevertSpecialMove) {
+//            specialMoveTurns++;
+//        }
+//
+//        if (specialMoveTurns == 3) {
+//            revertSpecialMove(toPunch);
+//            keyRevertSpecialMove = false; // key to stop counting
+//            specialMoveTurns = 0; // setting special move turns to 0 for next possible usage
+//        }
 
 
         // Calculate base damage
