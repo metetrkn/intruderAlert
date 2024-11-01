@@ -13,6 +13,8 @@ public abstract class Entity {
     private float damage = attackPoint;
     private Random random = new Random(); // Instantiating random object
     private NumberRound round = new NumberRound(); // Instantiating rounder to 2nd decimal
+    private byte specialMoveTurns = 0; // Tracks how many turns after special move activates
+    private boolean specialMoveActive = false; // If special move is active
 
     // Constructor
     public Entity(String name, String role, float health, float attackPoint, float defensePoint) {
