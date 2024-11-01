@@ -50,14 +50,28 @@ public abstract class Entity {
         this.defensePoint = round.roundToTwoDecimals(newAmount);
     }
 
+    byte specialMoveTurns = 0; // Turn after special moves activated
+    boolean keyRevertSpecialMove = false; // Key to activate reversSpecialMove method
+
     // Method to perform an attack on another entity
     public void punch(Entity toPunch) {
         // Each turn, there is a 20% chance for a special move to occur for both characters
-        int specialMoveChance  = random.nextInt(5);
+        if (random.nextInt(5) == 1) {
+            keyRevertSpecialMove = true; // key to start counting
+            specialMove(toPunch);
+        }
 
-            if (specialMoveChance  == 1) {
-                specialMove(toPunch);
-            }
+        // Checks in here if 3 turns happaned
+        if (keyRevertSpecialMove) {
+            specialMoveTurns++;
+        }
+
+        if (specialMoveTurns == 3) {
+            revertSpecialMove(toPunch);
+            keyRevertSpecialMove = false; // key to stop counting
+            specialMoveTurns = 0; // setting special move turns to 0 for next possible usage
+        }
+
 
         // Calculate base damage
         float baseDamage = this.attackPoint - toPunch.getDefensePoint();
@@ -100,4 +114,7 @@ public abstract class Entity {
 
     // Special move abstract method, each character will have their own unique move
     public abstract void specialMove(Entity toPunch);
+
+    // Special move revert method, after 3 turn effects disappear
+    public abstract void revertSpecialMove(Entity toPunch);
 }

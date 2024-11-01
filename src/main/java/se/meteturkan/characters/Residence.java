@@ -11,9 +11,12 @@ public class Residence extends Entity {
     public void specialMove(Entity toPunch) {
         System.out.println("Residence finds his motorcycle helmet on the corner!\n" +
                 "His defence increases drastically!");
-
-        System.out.println("previous defence point: " + getDefensePoint());
         increaseDefence(20.0F);
-        System.out.println("after defence: " + getDefensePoint());
+    }
+
+    @Override
+    public void revertSpecialMove(Entity toPunch) {
+        System.out.println("Effects of special move for 'Residence' has ended!");
+        increaseDefence(-20.0F);
     }
 }

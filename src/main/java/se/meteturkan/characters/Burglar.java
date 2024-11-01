@@ -10,8 +10,12 @@ public class Burglar extends Entity {
     public void specialMove(Entity toPunch) {
         System.out.println("Bad luck!!! The burglar uses a blinding spray!\n" +
                 "The resident is defenseless and burglar's attack increases drastically!");
-        System.out.println(getAttackPoint());
         increaseDamage(20.0F);
-        System.out.println(getAttackPoint());
+    }
+
+    @Override
+    public void revertSpecialMove(Entity toPunch) {
+        System.out.println("Effects of special move for 'Burglar' has ended!");
+        increaseDamage(-20.0F);
     }
 }
