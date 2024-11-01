@@ -1,6 +1,7 @@
 package se.meteturkan.characters;
 
 import java.util.Random;
+import se.meteturkan.common.NumberRound;
 
 public abstract class Entity {
     // Abstract class attributes
@@ -11,6 +12,7 @@ public abstract class Entity {
     private float defensePoint;
     private float damage = attackPoint;
     private Random random = new Random(); // Instantiating random object
+    private NumberRound round = new NumberRound(); // Instantiating rounder to 2nd decimal
 
     // Constructor
     public Entity(String name, String role, float health, float attackPoint, float defensePoint) {
@@ -27,25 +29,25 @@ public abstract class Entity {
     }
 
     public float getHealt() {
-        return health;
+        return round.roundToTwoDecimals(health);
     }
 
     public float getAttackPoint() {
-        return damage;
+        return round.roundToTwoDecimals(damage);
     }
 
     public float getDefensePoint() {
-        return defensePoint;
+        return round.roundToTwoDecimals(defensePoint);
     }
 
     // Attack point setter method
     public void setAttackPoint(float newAmount) {
-        this.attackPoint = newAmount;
+        this.attackPoint = round.roundToTwoDecimals(newAmount);
     }
 
     // Defence point setter method
     public void setDefensePoint(float newAmount) {
-        this.defensePoint = newAmount;
+        this.defensePoint = round.roundToTwoDecimals(newAmount);
     }
 
     // Method to perform an attack on another entity
@@ -61,10 +63,10 @@ public abstract class Entity {
         float baseDamage = this.attackPoint - toPunch.getDefensePoint();
 
         // Generate a random multiplier between 0.5 and 1.5
-        double damageMultiplier = 0.5 + (random.nextDouble()); // random value in [0.5, 1.5]
+        float damageMultiplier = (float) (0.5 + (random.nextFloat())); // random value in [0.5, 1.5]
 
         // Calculate final damage applying the multiplier
-        damage = (float) Math.max(baseDamage * damageMultiplier, 0); // Ensure damage is non-negative
+        damage = round.roundToTwoDecimals((float) Math.max(baseDamage * damageMultiplier, 0)); // Ensure damage is non-negative
 
         // Apply damage to the target entity
         toPunch.takeHit(damage);

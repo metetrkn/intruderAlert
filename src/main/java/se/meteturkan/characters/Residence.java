@@ -13,7 +13,7 @@ public class Residence extends Entity {
                 "His defence increases drastically!");
 
         System.out.println("previous defence point: " + getDefensePoint());
-        increaseDefence(20);
+        increaseDefence(20.0F);
         System.out.println("after defence: " + getDefensePoint());
     }
 }
