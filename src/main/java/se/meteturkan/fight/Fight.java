@@ -48,8 +48,8 @@ public class Fight {
     private void executeAttack(Entity attacker, Entity defender) {
         attacker.punch(defender); // Attacker attacks defender
 
-        System.out.println("✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨" +
-                "\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F");
+        // Prints a series of fire characters for visual effect
+        System.out.println("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥");
 
         // Print the attack action
         System.out.println("\n" + attacker.getName() + " hits ===> " + defender.getName() + " ("
@@ -62,8 +62,7 @@ public class Fight {
             System.out.println(defender.getName() + " has " + currentHealth + "/" + baseHealth + " health left.\n");
         }
 
-        System.out.println("✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨" +
-                "\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F✨\uD83C\uDF1F");
+        System.out.println("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥\n\n\n\n");
     }
 
 
