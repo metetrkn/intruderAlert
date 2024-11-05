@@ -18,6 +18,7 @@ public class OptionController {
             try {
                 System.out.print("Choice:\t"); // Prompt user to input
                 userInput = scanner.nextInt(); // Read user input
+                System.out.println();
                 scanner.nextLine(); // To consume the newline
 
                 if (minOption <= userInput && userInput <= maxOption) { // Check if input is within range
