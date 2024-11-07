@@ -21,8 +21,9 @@ public class Bedroom extends Room {
                    A closet door is slightly ajar, revealing hanging clothes.""";
 
     @Override
-    public void getMaterial() {
+    public boolean getMaterial() {
         System.out.println();
+        return false;
     }
 
     public String getDescription() {

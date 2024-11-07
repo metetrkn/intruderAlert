@@ -19,8 +19,9 @@ public class EmptyRoom extends Room {
                       There is no furniture, just an empty, echoing space.""";
 
     @Override
-    public void getMaterial() {
+    public boolean getMaterial() {
         System.out.println();
+        return false;
     }
 
     public String getDescription() {

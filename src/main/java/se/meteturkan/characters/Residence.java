@@ -7,6 +7,13 @@ public class Residence extends Entity {
         super(name, healt, attackPoint, defensePoint);
     }
 
+    // Inside Residence.java
+    public void increaseAttack(float points) {
+        setAttackPoint(getAttackPoint() + points); // Increases the attack points
+        System.out.println(this.getName() + "'s attack has increased by " + points + " points.");
+    }
+
+
     @Override
     public void specialMove(Entity toPunch) {
         System.out.println("Residence finds his motorcycle helmet on the corner!\n" +

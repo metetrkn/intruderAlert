@@ -12,20 +12,22 @@ public class Fight {
     private final Menu menu; // Dependency injection, declaring menu
     private OptionController optionController; // Creating OptionController object with scanner as parameter
     private static Scanner scanner;
+    private Burglar burglar;
+    private Residence residence;
 
 
-    public Fight(OptionController optionController, Scanner scanner, Menu menu) {
+
+    public Fight(OptionController optionController, Scanner scanner, Menu menu, Burglar burglar, Residence residence) {
         this.optionController = optionController;
         this.scanner = scanner;
         this.menu = menu;
         this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
+        this.burglar = burglar;
+        this.residence = residence;
         this.residenceBaseHealth = 0;
     }
 
 
-    // Declaring burglar instance as a concrete subclass
-    private  Burglar burglar = new Burglar("Burglar", 80, 12, 4);
-    private  Residence residence = new Residence("Residence", 100, 7, 5);
 
 
     private final float burglarBaseHealth; // Store initial health of the burglar

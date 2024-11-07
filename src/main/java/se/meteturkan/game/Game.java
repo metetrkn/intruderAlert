@@ -2,11 +2,15 @@ package se.meteturkan.game;
 
 import java.util.Random;
 import java.util.Scanner;
+
+import se.meteturkan.characters.Burglar;
+import se.meteturkan.characters.Residence;
 import se.meteturkan.common.OptionController;
 import se.meteturkan.fight.Fight;
 import se.meteturkan.rooms.Room;
 import se.meteturkan.rooms.RoomFactory;
 import java.util.HashMap;
+import se.meteturkan.rooms.Materials;
 
 public class Game {
     private Scanner scanner; // Declare scanner for dependency injection
@@ -16,12 +20,19 @@ public class Game {
     private Room residenceCurrentRoom;
     private Room burglarCurrentRoom;
     private Random random = new Random();
+    private  Materials materials;
+
+
+    // Declaring burglar instance as a concrete subclass
+    private Burglar burglar = new Burglar("Burglar", 80, 12, 4);
+    private Residence residence = new Residence("Residence", 100, 7, 5);
+
 
     // Constructor
     public Game(Scanner scanner, OptionController controller) {
         this.scanner = scanner;
         this.controller = controller; // Initialize OptionController with the injected scanner
-        this.fight = new Fight(controller, scanner, menu); // Initializing fight with the injected OptionController
+        this.fight = new Fight(controller, scanner, menu, burglar, residence); // Initializing fight with the injected OptionController
 
         // Initialize rooms
         initializeRooms();
@@ -129,7 +140,10 @@ public class Game {
             menu.printStringWithDelay(residenceCurrentRoom.getDescription(), 10);
             System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
 
-            residenceCurrentRoom.getMaterial(); // If there is a material in current room
+            // If there is a material in current room and user takes it
+            if (residenceCurrentRoom.getMaterial()) {
+                residence.increaseAttack(15);
+            };
 
             System.out.println("Where do you want to go next?\n"); // Prompting user to choose where to go next
 

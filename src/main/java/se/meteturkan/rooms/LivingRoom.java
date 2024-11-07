@@ -20,9 +20,11 @@ public class LivingRoom extends Room {
                        The floor is covered with a soft rug, and a lamp provides warm light.
                        A window lets in natural light, and family photos hang on the walls.""";
 
+
     @Override
-    public void getMaterial() {
+    public boolean getMaterial() {
         System.out.println();
+        return  false;
     }
 
     public String getDescription() {

@@ -19,9 +19,11 @@ public class Hall2 extends Room {
                  A narrow bench sits along one side, and a small window at the end provides natural light.""";
 
 
+
     @Override
-    public void getMaterial() {
+    public boolean getMaterial() {
         System.out.println();
+        return  false;
     }
 
     public String getDescription() {

@@ -21,8 +21,9 @@ public class Hall extends Room {
 
 
     @Override
-    public void getMaterial() {
+    public boolean getMaterial() {
         System.out.println();
+        return  false;
     }
 
     public String getDescription() {

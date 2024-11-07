@@ -44,5 +44,5 @@ public abstract class Room {
     public abstract String getDescription();
 
     // Material
-    public abstract void getMaterial();
+    public abstract boolean getMaterial();
 }
