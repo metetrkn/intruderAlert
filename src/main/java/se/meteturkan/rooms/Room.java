@@ -1,7 +1,6 @@
 package se.meteturkan.rooms;
 
 
-import se.meteturkan.game.Menu;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +11,7 @@ public abstract class Room {
     private String roomName;
     private List<Room> connectedRooms = new ArrayList<>();
     private Scanner scanner;
+    private Materials materials;
 
 
 

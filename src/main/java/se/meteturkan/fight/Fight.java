@@ -4,17 +4,20 @@ import se.meteturkan.characters.Entity;
 import se.meteturkan.characters.Residence;
 import se.meteturkan.characters.Burglar;
 import se.meteturkan.common.OptionController;
+import se.meteturkan.game.Menu;
 import java.util.Scanner;
 
 public class Fight {
     private static boolean running = true; // Control the fight loop
+    private final Menu menu; // Dependency injection, declaring menu
     private OptionController optionController; // Creating OptionController object with scanner as parameter
     private static Scanner scanner;
 
 
-    public Fight(OptionController optionController, Scanner scanner) {
+    public Fight(OptionController optionController, Scanner scanner, Menu menu) {
         this.optionController = optionController;
         this.scanner = scanner;
+        this.menu = menu;
         this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
         this.residenceBaseHealth = 0;
     }
@@ -56,17 +59,16 @@ public class Fight {
     }
 
 
-
     // Start the fight loop
     public void startFight() {
         while (running && burglar.isConscious() && residence.isConscious()) {
-            System.out.println("\nChoose an action:\n1 - Attack\n2 - Run\n"); // Prompt user
-            int input = optionController.checker(1, 2); // Prompting user until inputs a valid option
+            System.out.println("\nChoose an action:\n1 - Attack\n2 - Exit\n"); // Prompt user
+            int input = optionController.checker(1,2); // Prompting user until inputs a valid option
 
             if (input == 1) {
                 fightOneRound(); // Execute a round of fighting
             } else {
-                System.out.println("You have chosen to run away!");
+                menu.exitSystem(); // Exiting messages
                 running = false; // Exit the fight loop
             }
         }
@@ -78,8 +80,6 @@ public class Fight {
             printNeutralizedMessage("residence");
         }
     }
-
-
 
 
     // Method to print neutralization message

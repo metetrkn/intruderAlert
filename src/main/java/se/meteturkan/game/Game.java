@@ -21,7 +21,7 @@ public class Game {
     public Game(Scanner scanner, OptionController controller) {
         this.scanner = scanner;
         this.controller = controller; // Initialize OptionController with the injected scanner
-        this.fight = new Fight(controller, scanner); // Initializing fight with the injected OptionController
+        this.fight = new Fight(controller, scanner, menu); // Initializing fight with the injected OptionController
 
         // Initialize rooms
         initializeRooms();
@@ -83,6 +83,7 @@ public class Game {
         // Setting starting rooms of gamers
         this.residenceCurrentRoom = livingRoom;
         this.burglarCurrentRoom = emptyroom;
+
     }
 
     // Initializing menu operations

@@ -6,6 +6,9 @@ import se.meteturkan.game.Menu;
 import java.util.Scanner;
 
 public class Kitchen extends Room {
+    Scanner scanner;
+
+    Materials materials;
     // Constructor
     public Kitchen(Scanner scanner, Menu menu) {
         super(scanner); // Pass dependencies to the abstract class constructor
@@ -22,7 +25,10 @@ public class Kitchen extends Room {
 
     @Override
     public void getMaterial() {
-
+        System.out.println("\nYou see frying pan on the stove.\nYou decide to\n 1- Take it!\n 2- Do not touch!");
+        int choice = scanner.nextInt();
+        // OptionController = ....
+        materials.material.get("Frying pan");
     }
 
     public String getDescription() {
