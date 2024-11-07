@@ -19,8 +19,8 @@ public class RoomFactory {
                 return new Bedroom(scanner, menu, controller);
             case "Hall":
                 return new Hall(scanner, menu, controller);
-            case "EmptyRoom":
-                return new EmptyRoom(scanner, menu, controller);
+            case "Office":
+                return new Office(scanner, menu, controller);
             case "Bathroom":
                 return new Bathroom(scanner, menu, controller);
 

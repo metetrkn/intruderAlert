@@ -44,13 +44,13 @@ public class Game {
         Room kitchen = RoomFactory.createRoom("Kitchen", scanner, menu, controller);
         Room bedroom = RoomFactory.createRoom("Bedroom",scanner, menu, controller);
         Room bathroom = RoomFactory.createRoom("Bathroom",scanner, menu, controller);
-        Room emptyroom = RoomFactory.createRoom("EmptyRoom",scanner, menu, controller);
+        Room office = RoomFactory.createRoom("Office",scanner, menu, controller);
         Room hall = RoomFactory.createRoom("Hall",scanner, menu, controller);
         Room hall2 = RoomFactory.createRoom("Hall2",scanner, menu, controller);
 
         // Connecting rooms based on house plan
         /**
-         (BATHROOM)   <==>    (EMPTY ROOM)
+         (BATHROOM)   <==>    (OFFICE)
          ^                      ^
          ||                     ||
          v                      v
@@ -68,15 +68,15 @@ public class Game {
 
         // Connecting bathroom to related rooms
         bathroom.connectRoom(livingRoom);
-        bathroom.connectRoom(emptyroom);
+        bathroom.connectRoom(office);
 
-        // Connecting empty room to related rooms
-        emptyroom.connectRoom(bathroom);
-        emptyroom.connectRoom(hall);
+        // Connecting office to related rooms
+        office.connectRoom(bathroom);
+        office.connectRoom(hall);
 
         // Connecting hall to related rooms
         hall.connectRoom(livingRoom);
-        hall.connectRoom(emptyroom);
+        hall.connectRoom(office);
 
         // Connecting bedroom to related rooms
         bedroom.connectRoom(livingRoom);
@@ -92,7 +92,7 @@ public class Game {
 
         // Setting starting rooms of gamers
         this.residenceCurrentRoom = livingRoom;
-        this.burglarCurrentRoom = emptyroom;
+        this.burglarCurrentRoom = office;
     }
 
     // Initializing menu operations
@@ -173,8 +173,11 @@ public class Game {
 
             // A fight begins if the residence and burglar are in the same room
             if (residenceCurrentRoom == burglarCurrentRoom) {
-                fight.startFight(); // Init fight
-                break;
+                // If residence
+                if (burglar.getHealt() > 0 && residence.getHealt() > 0) {
+                    fight.startFight(); // Init fight
+                }
+
             }
 
             // Resetting hashmap for next iteration
@@ -182,3 +185,4 @@ public class Game {
         }
     }
 }
+

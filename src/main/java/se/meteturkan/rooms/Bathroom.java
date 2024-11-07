@@ -10,7 +10,6 @@ public class Bathroom extends Room {
     public Bathroom(Scanner scanner, Menu menu, OptionController controller) {
         super(scanner, menu, controller); // Pass dependencies to the abstract class constructor
         setRoomName("bathroom");
-        //setConnectedRooms();
     }
 
     private String description = """

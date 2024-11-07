@@ -63,6 +63,9 @@ public class Fight {
 
     // Start the fight loop
     public void startFight() {
+        menu.printStringWithDelay( "\nYou confront the burglar, his face concealed by a mask,\n" +
+                                           "yet you can hear his ragged, menacing breath. The air is thick with tension.\n" +
+                                           "It's time for a fight!\n", 20);
         while (running && burglar.isConscious() && residence.isConscious()) {
             System.out.println("\nChoose an action:\n1 - Attack\n2 - Exit\n"); // Prompt user
             int input = controller.checker(1,2); // Prompting user until inputs a valid option
@@ -95,13 +98,7 @@ public class Fight {
         int input = 0; // User choice to call the police or hide the body
 
         // If the resident neutralizes the burglar, prompt to call the police.
-        if (entity.equals("burglar")) {
-            menu.printStringWithDelay("\n\nDo you want to call the police!\n 1 - Call\n 2 - Hide the body!\n", 10);
-            input = controller.checker(1,2); // Prompting user until inputs a valid option
-
-        // Final message
-        menu.printStringWithDelay(input == 1 ? "\nPolice are on the way! Nightmare ended!" : "\nYou hid the body! Too young for jail!", 10);
-        } else {
+        if (entity.equals("residence")) {
             menu.printStringWithDelay("\n\nYou died and your entire house was stolen!", 10);
         }
     }

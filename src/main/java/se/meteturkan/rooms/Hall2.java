@@ -10,7 +10,6 @@ public class Hall2 extends Room {
     public Hall2(Scanner scanner, Menu menu, OptionController controller) {
         super(scanner, menu, controller); // Pass dependencies to the abstract class constructor
         setRoomName("hall-2");
-        //setConnectedRooms();
     }
 
     private String description = """

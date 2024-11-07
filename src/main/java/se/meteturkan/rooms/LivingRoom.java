@@ -11,7 +11,6 @@ public class LivingRoom extends Room {
     public LivingRoom(Scanner scanner, Menu menu, OptionController controller) {
         super(scanner, menu, controller); // Pass dependencies to the abstract class constructor
         setRoomName("living room");
-        //setConnectedRooms();
     }
 
     private String description = """
