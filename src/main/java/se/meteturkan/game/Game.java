@@ -20,7 +20,6 @@ public class Game {
     private Room residenceCurrentRoom;
     private Room burglarCurrentRoom;
     private Random random = new Random();
-    private  Materials materials;
 
 
     // Declaring burglar instance as a concrete subclass
