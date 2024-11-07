@@ -99,7 +99,10 @@ public class Fight {
             menu.printStringWithDelay("\n\nDo you want to call the police!\n 1 - Call\n 2 - Hide the body!\n", 10);
             input = controller.checker(1,2); // Prompting user until inputs a valid option
 
-            menu.printStringWithDelay(input == 1 ? "\nPolice are on the way! Nightmare ended!" : "\nYou hid the body! Too young for jail!", 10);
+        // Final message
+        menu.printStringWithDelay(input == 1 ? "\nPolice are on the way! Nightmare ended!" : "\nYou hid the body! Too young for jail!", 10);
+        } else {
+            menu.printStringWithDelay("\n\nYou died and your entire house was stolen!", 10);
         }
     }
 }
