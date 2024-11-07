@@ -1,25 +1,25 @@
 package se.meteturkan.rooms;
 
-
+import se.meteturkan.common.OptionController;
+import se.meteturkan.game.Menu;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 public abstract class Room {
-    private String description;
     private String roomName;
     private List<Room> connectedRooms = new ArrayList<>();
-    private Scanner scanner;
-    private Materials materials;
-
-
+    Scanner scanner; // Removed initialization
+    Menu menu;
+    OptionController controller; // Removed initialization
+    private Materials materials = new Materials(); // Instantiating material
 
     // Constructor for using dependency injection
-    public Room(Scanner scanner) {
+    public Room(Scanner scanner, Menu menu, OptionController controller) {
         this.scanner = scanner;
+        this.menu = menu;
+        this.controller = controller; // These are now passed from the subclass
     }
-
 
     // Getter method
     public List<Room> getConnectedRooms() {
@@ -29,7 +29,6 @@ public abstract class Room {
     public String getRoomName() {
         return roomName;
     }
-
 
     // Setter method
     public void setRoomName(String roomName) {

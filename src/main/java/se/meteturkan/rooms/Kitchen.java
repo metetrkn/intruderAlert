@@ -1,19 +1,14 @@
 package se.meteturkan.rooms;
 
-
+import se.meteturkan.common.OptionController;
 import se.meteturkan.game.Menu;
-
 import java.util.Scanner;
 
 public class Kitchen extends Room {
-    Scanner scanner;
-
-    Materials materials;
     // Constructor
-    public Kitchen(Scanner scanner, Menu menu) {
-        super(scanner); // Pass dependencies to the abstract class constructor
+    public Kitchen(Scanner scanner, Menu menu, OptionController controller) {
+        super(scanner, menu, controller); // Pass dependencies to the abstract class constructor
         setRoomName("kitchen");
-        //setConnectedRooms();
     }
 
     private String description = """
@@ -25,10 +20,13 @@ public class Kitchen extends Room {
 
     @Override
     public void getMaterial() {
-        System.out.println("\nYou see frying pan on the stove.\nYou decide to\n 1- Take it!\n 2- Do not touch!");
-        int choice = scanner.nextInt();
-        // OptionController = ....
-        materials.material.get("Frying pan");
+        System.out.println("\nYou see a frying pan on the stove.\n\nYou decide to\n 1- Take it!\n 2- Do not touch!\n\n");
+        int choice = controller.checker(1,2); // User choice to take material or leave it
+
+        if (choice == 1){
+            menu.printStringWithDelay("You took the frying pan. Your attack skills increased by 17 points!", 10);
+            // Function to increase attack skills
+        }
     }
 
     public String getDescription() {

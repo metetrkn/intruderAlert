@@ -1,14 +1,15 @@
 package se.meteturkan.rooms;
 
 
+import se.meteturkan.common.OptionController;
 import se.meteturkan.game.Menu;
 
 import java.util.Scanner;
 
 public class LivingRoom extends Room {
     // Constructor
-    public LivingRoom(Scanner scanner, Menu menu) {
-        super(scanner); // Pass dependencies to the abstract class constructor
+    public LivingRoom(Scanner scanner, Menu menu, OptionController controller) {
+        super(scanner, menu, controller); // Pass dependencies to the abstract class constructor
         setRoomName("living room");
         //setConnectedRooms();
     }

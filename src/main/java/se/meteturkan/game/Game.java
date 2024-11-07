@@ -30,13 +30,13 @@ public class Game {
     // Initializing rooms
     private void initializeRooms() {
         // Create rooms using the factory method
-        Room livingRoom = RoomFactory.createRoom("LivingRoom", scanner, menu);
-        Room kitchen = RoomFactory.createRoom("Kitchen", scanner, menu);
-        Room bedroom = RoomFactory.createRoom("Bedroom",scanner, menu);
-        Room bathroom = RoomFactory.createRoom("Bathroom",scanner, menu);
-        Room emptyroom = RoomFactory.createRoom("EmptyRoom",scanner, menu);
-        Room hall = RoomFactory.createRoom("Hall",scanner, menu);
-        Room hall2 = RoomFactory.createRoom("Hall2",scanner, menu);
+        Room livingRoom = RoomFactory.createRoom("LivingRoom", scanner, menu, controller);
+        Room kitchen = RoomFactory.createRoom("Kitchen", scanner, menu, controller);
+        Room bedroom = RoomFactory.createRoom("Bedroom",scanner, menu, controller);
+        Room bathroom = RoomFactory.createRoom("Bathroom",scanner, menu, controller);
+        Room emptyroom = RoomFactory.createRoom("EmptyRoom",scanner, menu, controller);
+        Room hall = RoomFactory.createRoom("Hall",scanner, menu, controller);
+        Room hall2 = RoomFactory.createRoom("Hall2",scanner, menu, controller);
 
         // Connecting rooms based on house plan
         /**
@@ -83,7 +83,6 @@ public class Game {
         // Setting starting rooms of gamers
         this.residenceCurrentRoom = livingRoom;
         this.burglarCurrentRoom = emptyroom;
-
     }
 
     // Initializing menu operations
@@ -129,7 +128,10 @@ public class Game {
             System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
             menu.printStringWithDelay(residenceCurrentRoom.getDescription(), 10);
             System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
-            System.out.println("\nWhere do you want to go next?\n"); // Prompting user to choose where to go next
+
+            residenceCurrentRoom.getMaterial(); // If there is a material in current room
+
+            System.out.println("Where do you want to go next?\n"); // Prompting user to choose where to go next
 
             // Looping through all connected rooms to current one for residence
             for (Room connectedRoom : residenceCurrentRoom.getConnectedRooms()) {

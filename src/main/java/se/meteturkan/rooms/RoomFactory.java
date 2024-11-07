@@ -1,27 +1,28 @@
 package se.meteturkan.rooms;
 
 
+import se.meteturkan.common.OptionController;
 import se.meteturkan.game.Menu;
 import java.util.Scanner;
 
 public class RoomFactory {
     // Factory method to create Room instances
-    public static Room createRoom(String roomType, Scanner scanner, Menu menu) {
+    public static Room createRoom(String roomType, Scanner scanner, Menu menu, OptionController controller) {
         switch (roomType) {
             case "LivingRoom":
-                return new LivingRoom(scanner, menu);
+                return new LivingRoom(scanner, menu, controller);
             case "Kitchen":
-                return new Kitchen(scanner, menu);
+                return new Kitchen(scanner, menu, controller);
             case "Hall2":
-                return new Hall2(scanner, menu);
+                return new Hall2(scanner, menu, controller);
             case "Bedroom":
-                return new Bedroom(scanner, menu);
+                return new Bedroom(scanner, menu, controller);
             case "Hall":
-                return new Hall(scanner, menu);
+                return new Hall(scanner, menu, controller);
             case "EmptyRoom":
-                return new EmptyRoom(scanner, menu);
+                return new EmptyRoom(scanner, menu, controller);
             case "Bathroom":
-                return new Bathroom(scanner, menu);
+                return new Bathroom(scanner, menu, controller);
 
 
             // Add other room types here
