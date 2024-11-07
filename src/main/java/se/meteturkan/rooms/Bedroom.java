@@ -1,29 +1,30 @@
 package se.meteturkan.rooms;
 
 import se.meteturkan.game.Menu;
+
 import java.util.Scanner;
 
 public class Bedroom extends Room {
-    private Menu menu;
-
     // Constructor
     public Bedroom(Scanner scanner, Menu menu) {
-        super(scanner, menu); // Pass dependencies to the abstract class constructor
+        super(scanner); // Pass dependencies to the abstract class constructor
         setRoomName("bedroom");
         //setConnectedRooms();
     }
 
     private String description = """
-            Bedroom
-            """;
-
-    @Override
-    public void describeRoom() {  // Printing out room description with 10 millisecond delays
-        menu.printStringWithDelay(description, 10);
-    }
+                   The bedroom is cozy with a large bed covered in a thick quilt.
+                   There's a wooden dresser with a few clothes scattered on top.
+                   A small nightstand beside the bed holds a lamp and a book.
+                   The floor is carpeted, and a window with curtains lets in some light. 
+                   A closet door is slightly ajar, revealing hanging clothes.""";
 
     @Override
     public void getMaterial() {
 
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

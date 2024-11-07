@@ -8,7 +8,6 @@ import se.meteturkan.rooms.Room;
 import se.meteturkan.rooms.RoomFactory;
 import java.util.HashMap;
 
-
 public class Game {
     private Scanner scanner; // Declare scanner for dependency injection
     private OptionController controller; // Declare OptionController for dependency injection
@@ -17,8 +16,6 @@ public class Game {
     private Room residenceCurrentRoom;
     private Room burglarCurrentRoom;
     private Random random = new Random();
-
-
 
     // Constructor
     public Game(Scanner scanner, OptionController controller) {
@@ -42,17 +39,17 @@ public class Game {
         Room hall2 = RoomFactory.createRoom("Hall2",scanner, menu);
 
         // Connecting rooms based on house plan
-/**
-                             (BATHROOM)   <==>    (EMPTY ROOM)
-                                 ^                      ^
-                                ||                     ||
-                                v                      v
+        /**
+         (BATHROOM)   <==>    (EMPTY ROOM)
+         ^                      ^
+         ||                     ||
+         v                      v
          (KITCHEN)   <==>  (LIVING ROOM)  <==>      (HALL)
-            ^                   ^
-           ||                  ||
-           v                   v
+         ^                   ^
+         ||                  ||
+         v                   v
          (HALL-2)    <==>  (BEDROOM)
-*/
+         */
         // Connecting living room to related rooms
         livingRoom.connectRoom(kitchen);
         livingRoom.connectRoom(bathroom);
@@ -83,12 +80,10 @@ public class Game {
         kitchen.connectRoom(hall2);
         kitchen.connectRoom(livingRoom);
 
-
         // Setting starting rooms of gamers
         this.residenceCurrentRoom = livingRoom;
         this.burglarCurrentRoom = emptyroom;
     }
-
 
     // Initializing menu operations
     public void initMenu() {
@@ -105,8 +100,6 @@ public class Game {
             System.exit(0); // Closing the system
         }
     }
-
-
 
     // Simulating residence and burglar moving around rooms
     public void tourRooms() {
@@ -125,15 +118,17 @@ public class Game {
 
             int randomRoom = 1 + random.nextInt(roomNum - 1); // Getting random room number from hashmap automatically for burglar
             burglarCurrentRoom = map.get(randomRoom); // Burglar goes to next room (randomly chosen)
-            System.out.printf("\nThere are some creaking sounds coming from %s\n\n", burglarCurrentRoom.getRoomName());
-
+            menu.printStringWithDelay("\nThere are some creaking sounds coming from " + burglarCurrentRoom.getRoomName() + "\n\n", 10);
 
             // Resetting hashmap and room
-            roomNum = 1;
             map.clear();
+            roomNum = 1;
 
-            System.out.printf("Residence is currently at: %s",  residenceCurrentRoom.getRoomName() + "\n"); // Residence current location in house
-            System.out.println("Where you want to go next?\n"); // Prompting user to choice where to go next
+            menu.printStringWithDelay("Residence is currently at: " + residenceCurrentRoom.getRoomName() + "\n\n", 10); // Residence current location in house
+            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+            menu.printStringWithDelay(residenceCurrentRoom.getDescription(), 10);
+            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+            System.out.println("\nWhere do you want to go next?\n"); // Prompting user to choose where to go next
 
             // Looping through all connected rooms to current one for residence
             for (Room connectedRoom : residenceCurrentRoom.getConnectedRooms()) {
@@ -142,19 +137,27 @@ public class Game {
                 roomNum++;
             }
 
-            // Prompting user to input next rooms choice
+            // Prompting user to input next room choice
             System.out.print("\nNext room: ");
-            residenceCurrentRoom = map.get(scanner.nextInt());
+            int userChoice = scanner.nextInt();
 
+            if (!map.containsKey(userChoice)) {
+                System.err.println("Invalid room choice.");
+                continue; // Skip the rest of the loop if the input is invalid
+            }
+
+            residenceCurrentRoom = map.get(userChoice);
 
             // A fight begins if the residence and burglar are in the same room
             if (residenceCurrentRoom == burglarCurrentRoom) {
                 fight.startFight(); // Init fight
                 break;
             }
+
+            // Resetting hashmap for next iteration
+            map.clear();
         }
     }
-
 
     // Initialize fight
     public void initGame() {

@@ -8,17 +8,16 @@ import java.util.Scanner;
 
 
 public abstract class Room {
-    private String roomDescription;
+    private String description;
     private String roomName;
     private List<Room> connectedRooms = new ArrayList<>();
     private Scanner scanner;
-    private Menu menu;
+
 
 
     // Constructor for using dependency injection
-    public Room(Scanner scanner, Menu menu) {
+    public Room(Scanner scanner) {
         this.scanner = scanner;
-        this.menu = menu;
     }
 
 
@@ -42,10 +41,8 @@ public abstract class Room {
         connectedRooms.add(room);
     }
 
-
-    // Usual method to print out rooms description
-    public abstract void describeRoom();
-
+    // Room describing
+    public abstract String getDescription();
 
     // Material
     public abstract void getMaterial();

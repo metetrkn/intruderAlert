@@ -21,7 +21,7 @@ public class Menu {
 
     // Printing out string message with 140-millisecond delay
     public void printStringWithDelay(String message, int duration) {
-        for (char c : (message + "\n\n").toCharArray()) {
+        for (char c : (message + "\n").toCharArray()) {
             System.out.print(c);
             LockSupport.parkNanos(TimeUnit.MILLISECONDS.toNanos(duration));
         }

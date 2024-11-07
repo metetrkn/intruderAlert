@@ -21,8 +21,8 @@ public class Fight {
 
 
     // Declaring burglar instance as a concrete subclass
-    private  Burglar burglar = new Burglar("Burglar", "Burglar", 80, 10, 4);
-    private  Residence residence;
+    private  Burglar burglar = new Burglar("Burglar", 80, 12, 4);
+    private  Residence residence = new Residence("Residence", 100, 7, 5);
 
 
     private final float burglarBaseHealth; // Store initial health of the burglar
@@ -56,11 +56,9 @@ public class Fight {
     }
 
 
+
     // Start the fight loop
     public void startFight() {
-        String name = scanner.nextLine(); // Getting user name as string
-        residence = new Residence(name, "Residence", 100, 10,4);
-
         while (running && burglar.isConscious() && residence.isConscious()) {
             System.out.println("\nChoose an action:\n1 - Attack\n2 - Run\n"); // Prompt user
             int input = optionController.checker(1, 2); // Prompting user until inputs a valid option
@@ -80,6 +78,8 @@ public class Fight {
             printNeutralizedMessage("residence");
         }
     }
+
+
 
 
     // Method to print neutralization message

@@ -5,7 +5,6 @@ import se.meteturkan.common.NumberRound;
 
 public abstract class Entity {
     private String name;
-    private String role;
     private float health;
     private float attackPoint;
     private float defensePoint;
@@ -14,9 +13,8 @@ public abstract class Entity {
     private byte specialMoveTurns = 0; // Tracks how many turns after special move activates
     private boolean specialMoveActive = false; // If special move is active
 
-    public Entity(String name, String role, float health, float attackPoint, float defensePoint) {
+    public Entity(String name, float health, float attackPoint, float defensePoint) {
         this.name = name;
-        this.role = role;
         this.health = health;
         this.attackPoint = attackPoint;
         this.defensePoint = defensePoint;
