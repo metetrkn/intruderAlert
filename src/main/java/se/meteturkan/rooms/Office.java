@@ -25,10 +25,19 @@ public class Office extends Room {
         System.out.println("\nYou see the mobile phone on the corner.\n\nYou decide to\n 1- Call the police!\n 2- Hide the body of burglar!\n\n");
         int choice = controller.checker(1,2); // User choice to take material or leave it
 
-        // If user takes material, returns true, otherwise false
+        // If user chooses to call the police
         if (choice == 1){
-            menu.printStringWithDelay("You took the scissor.", 10);
+            menu.printStringWithDelay("You took the phone and call the police!\n" +
+                    "<1000 minutes later> Based on sirens they are close. Nightmare ends!\n" +
+                    "Thanks for playing!", 10);
+
+            menu.farewell(); // Farewell message before game ends
+            System.exit(0); // The game closes
             return true;
+        } else { // If user do not call police, can continue travel through house
+            menu.printStringWithDelay("You have choosen a dark path!\n" +
+                    "But it is not this games problem.\n" +
+                    "You can just continue to travel through house", 10);
         }
         return false;
     }

@@ -24,7 +24,7 @@ public class Game {
 
     // Declaring burglar instance as a concrete subclass
     private Burglar burglar = new Burglar("Burglar", 80, 12, 4);
-    private Residence residence = new Residence("Residence", 100, 7, 5);
+    private Residence residence = new Residence("Residence", 100, 70, 5);
 
 
     // Constructor
@@ -169,6 +169,7 @@ public class Game {
             // Prompting user to input next room choice
             System.out.print("\nNext room: ");
             int userChoice = scanner.nextInt();
+            scanner.nextLine(); // Consuming scanner
 
             if (!map.containsKey(userChoice)) {
                 System.err.println("Invalid room choice.");

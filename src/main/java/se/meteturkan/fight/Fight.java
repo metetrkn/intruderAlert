@@ -24,7 +24,7 @@ public class Fight {
         this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
         this.burglar = burglar;
         this.residence = residence;
-        this.residenceBaseHealth = 0;
+        this.residenceBaseHealth = residence.getHealt();;
     }
 
 
@@ -100,6 +100,7 @@ public class Fight {
         // If the resident neutralizes the burglar, prompt to call the police.
         if (entity.equals("residence")) {
             menu.printStringWithDelay("\n\nYou died and your entire house was stolen!", 10);
+            menu.exitSystem(); // Game closes with farewell messages
         }
     }
 }

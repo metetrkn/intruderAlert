@@ -2,10 +2,11 @@
 2- There are seven rooms in the game (structure bk. houseStructure.jpg)
 3- Residence starts from livings room, residence starts in a random room
 4- Both players travel through rooms, and game tracks and give feedbacks about players rooms in each turns
-5- Both user have their special skills which can be triggered every fighting turn by 25%
-6- Residence users special skill increased defence for only 3 turn
-7- Burglar special skill increased attack for only 3 turn
-8- Every input by user is controlled, user prompts until give a valid input value
-9- There are 2 materials both which increase attack point, frying pan in kitchen, scissor in bathroom
-10- Attacks are dynamic. changes between [0.5x - 1.5x]
-11- damage calculation based on base damage, random multiplier, opponent defence, possed material, special attack
+5- If residence dies, games ends; if burglar dies, residence needs to go office and call the police to end game or can choose  to travel around house
+6- Both user have their special skills which can be triggered every fighting turn by 25%
+7- Residence users special skill increased defence for only 3 turn
+8- Burglar special skill increased attack for only 3 turn
+9- Every input by user is controlled, user prompts until give a valid input value
+10- There are 2 materials both which increase attack point, frying pan in kitchen, scissor in bathroom
+11- Attacks are dynamic. changes between [0.5x - 1.5x]
+12- damage calculation based on base damage, random multiplier, opponent defence, possed material, special attack

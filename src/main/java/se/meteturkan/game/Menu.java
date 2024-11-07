@@ -79,6 +79,7 @@ public class Menu {
     public void exitSystem() {
         printStringWithDelay("\nExiting...", 140);
         farewell();
+        System.exit(0);
     }
 
 
