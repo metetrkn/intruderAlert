@@ -20,7 +20,7 @@ public class EmptyRoom extends Room {
 
     @Override
     public void getMaterial() {
-
+        System.out.println();
     }
 
     public String getDescription() {

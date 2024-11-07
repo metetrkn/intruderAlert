@@ -24,7 +24,7 @@ public class Kitchen extends Room {
         int choice = controller.checker(1,2); // User choice to take material or leave it
 
         if (choice == 1){
-            menu.printStringWithDelay("You took the frying pan. Your attack skills increased by 17 points!", 10);
+            menu.printStringWithDelay("You took the frying pan. Your attack skills increased by 15 points!", 10);
             // Function to increase attack skills
         }
     }

@@ -21,7 +21,13 @@ public class Bathroom extends Room {
 
     @Override
     public void getMaterial() {
+        System.out.println("\nYou see a scissor in the shelf.\n\nYou decide to\n 1- Take it!\n 2- Do not touch!\n\n");
+        int choice = controller.checker(1,2); // User choice to take material or leave it
 
+        if (choice == 1){
+            menu.printStringWithDelay("You took the scissor. Your attack skills increased by 17 points!", 10);
+            // Function to increase attack skills
+        }
     }
 
     public String getDescription() {

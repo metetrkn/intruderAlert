@@ -21,7 +21,7 @@ public class Hall2 extends Room {
 
     @Override
     public void getMaterial() {
-
+        System.out.println();
     }
 
     public String getDescription() {

@@ -22,7 +22,7 @@ public class LivingRoom extends Room {
 
     @Override
     public void getMaterial() {
-
+        System.out.println();
     }
 
     public String getDescription() {
