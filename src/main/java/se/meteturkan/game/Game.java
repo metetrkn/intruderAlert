@@ -135,7 +135,13 @@ public class Game {
 
             int randomRoom = 1 + random.nextInt(roomNum - 1); // Getting random room number from hashmap automatically for burglar
             burglarCurrentRoom = map.get(randomRoom); // Burglar goes to next room (randomly chosen)
-            menu.printStringWithDelay("\nThere are some creaking sounds coming from " + burglarCurrentRoom.getRoomName() + "\n\n", 10);
+
+
+            // If burglar is alive, keeps reporting its position each turn
+            if (burglar.isConscious()) {
+                menu.printStringWithDelay("\nThere are some creaking sounds coming from " + burglarCurrentRoom.getRoomName() + "\n\n", 10);
+            }
+
 
             // Resetting hashmap and room
             map.clear();
