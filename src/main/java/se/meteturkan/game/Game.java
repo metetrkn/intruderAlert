@@ -112,6 +112,13 @@ public class Game {
         }
     }
 
+
+    // Initialize fight
+    public void initGame() {
+        tourRooms(); // Traveling through rooms until players meet and fight against each other
+    }
+
+
     // Simulating residence and burglar moving around rooms
     public void tourRooms() {
         boolean keepRunning = true;
@@ -174,10 +181,5 @@ public class Game {
             // Resetting hashmap for next iteration
             map.clear();
         }
-    }
-
-    // Initialize fight
-    public void initGame() {
-        tourRooms(); // Traveling through rooms until players meet and fight against each other
     }
 }

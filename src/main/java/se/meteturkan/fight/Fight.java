@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Fight {
     private static boolean running = true; // Control the fight loop
     private final Menu menu; // Dependency injection, declaring menu
-    private OptionController optionController; // Creating OptionController object with scanner as parameter
+    private OptionController controller; // Creating OptionController object with scanner as parameter
     private static Scanner scanner;
     private Burglar burglar;
     private Residence residence;
@@ -18,7 +18,7 @@ public class Fight {
 
 
     public Fight(OptionController optionController, Scanner scanner, Menu menu, Burglar burglar, Residence residence) {
-        this.optionController = optionController;
+        this.controller = optionController;
         this.scanner = scanner;
         this.menu = menu;
         this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
@@ -65,7 +65,7 @@ public class Fight {
     public void startFight() {
         while (running && burglar.isConscious() && residence.isConscious()) {
             System.out.println("\nChoose an action:\n1 - Attack\n2 - Exit\n"); // Prompt user
-            int input = optionController.checker(1,2); // Prompting user until inputs a valid option
+            int input = controller.checker(1,2); // Prompting user until inputs a valid option
 
             if (input == 1) {
                 fightOneRound(); // Execute a round of fighting
@@ -90,5 +90,16 @@ public class Fight {
         System.out.println(skull);
         System.out.printf("\"\"The %s has been neutralized. RIP!\"\"\n", entity);
         System.out.println(skull);
+
+
+        int input = 0; // User choice to call the police or hide the body
+
+        // If the resident neutralizes the burglar, prompt to call the police.
+        if (entity.equals("burglar")) {
+            menu.printStringWithDelay("\n\nDo you want to call the police!\n 1 - Call\n 2 - Hide the body!\n", 10);
+            input = controller.checker(1,2); // Prompting user until inputs a valid option
+
+            menu.printStringWithDelay(input == 1 ? "\nPolice are on the way! Nightmare ended!" : "\nYou hid the body! Too young for jail!", 10);
+        }
     }
 }
