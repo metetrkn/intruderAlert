@@ -11,12 +11,6 @@ public class Fight {
     private OptionController optionController; // Creating OptionController object with scanner as parameter
     private static Scanner scanner;
 
-    // Declaring burglar instance as a concrete subclass
-    private static Burglar burglar = new Burglar("Burglar", "Burglar", 80, 10, 4);
-    private Residence residence; // Declare residence without initializing
-
-    private final float burglarBaseHealth; // Store initial health of the burglar
-    private float residenceBaseHealth; // Store initial health of the residence
 
     public Fight(OptionController optionController, Scanner scanner) {
         this.optionController = optionController;
@@ -25,13 +19,15 @@ public class Fight {
         this.residenceBaseHealth = 0;
     }
 
-    // Method to initialize residence with user input
-    private void initializeResidence() {
-        System.out.print("Enter the name of the residence: ");
-        String residenceName = scanner.nextLine(); // Get user input for the residence name
-        residence = new Residence(residenceName, "Residence", 100, 10, 4); // Initialize with user input
-        this.residenceBaseHealth = residence.getHealt();
-    }
+
+    // Declaring burglar instance as a concrete subclass
+    private  Burglar burglar = new Burglar("Burglar", "Burglar", 80, 10, 4);
+    private  Residence residence;
+
+
+    private final float burglarBaseHealth; // Store initial health of the burglar
+    private float residenceBaseHealth; // Store initial health of the residence
+
 
     // Execute an attack from attacker to defender
     private void executeAttack(Entity attacker, Entity defender) {
@@ -50,6 +46,7 @@ public class Fight {
         System.out.println("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥\n\n\n\n");
     }
 
+
     // Execute one round of fighting, residence attacks first!
     private void fightOneRound() {
         executeAttack(residence, burglar); // Residence attacks burglar
@@ -58,9 +55,11 @@ public class Fight {
         }
     }
 
+
     // Start the fight loop
     public void startFight() {
-        initializeResidence(); // Prompt user for residence name
+        String name = scanner.nextLine(); // Getting user name as string
+        residence = new Residence(name, "Residence", 100, 10,4);
 
         while (running && burglar.isConscious() && residence.isConscious()) {
             System.out.println("\nChoose an action:\n1 - Attack\n2 - Run\n"); // Prompt user
@@ -76,9 +75,18 @@ public class Fight {
 
         // Check final health status
         if (!burglar.isConscious()) {
-            System.out.println("\n\"\"The burglar has been neutralized. RIP!\"\"");
+            printNeutralizedMessage("burglar");
         } else if (!residence.isConscious()) {
-            System.out.println("\n\"\"The residence has been neutralized. RIP!\"\"");
+            printNeutralizedMessage("residence");
         }
+    }
+
+
+    // Method to print neutralization message
+    private void printNeutralizedMessage(String entity) {
+        String skull = "\uD83D\uDC80\uD83D\uDC80\t\t\t\t\t\t\t\t\t\uD83D\uDC80\uD83D\uDC80";
+        System.out.println(skull);
+        System.out.printf("\"\"The %s has been neutralized. RIP!\"\"\n", entity);
+        System.out.println(skull);
     }
 }
