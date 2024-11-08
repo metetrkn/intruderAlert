@@ -168,14 +168,14 @@ public class Game {
 
             // Prompting user to input next room choice
             System.out.print("\nNext room: ");
-            int userChoice = controller.checker(1, roomNum);
+            int userChoice = controller.checker(1, roomNum); // User's next room choice as int
 
-            residenceCurrentRoom = map.get(userChoice);
+            residenceCurrentRoom = map.get(userChoice); // Updating user's current room as choice
 
             // A fight begins if the residence and burglar are in the same room
             if (residenceCurrentRoom == burglarCurrentRoom) {
-                // If residence
-                if (burglar.getHealt() > 0 && residence.getHealt() > 0) {
+                // and if both are conscious
+                if (burglar.isConscious() && residence.isConscious()) {
                     fight.startFight(); // Init fight
                 }
 
