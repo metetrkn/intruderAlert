@@ -24,7 +24,7 @@ public class Game {
 
     // Declaring burglar instance as a concrete subclass
     private Burglar burglar = new Burglar("Burglar", 80, 12, 4);
-    private Residence residence = new Residence("Residence", 100, 70, 5);
+    private Residence residence = new Residence("Residence", 100, 7, 5);
 
 
     // Constructor

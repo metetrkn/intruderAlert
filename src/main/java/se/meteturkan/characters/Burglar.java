@@ -13,6 +13,7 @@ public class Burglar extends Entity {
         increaseDamage(20.0F);
     }
 
+
     @Override
     public void revertSpecialMove(Entity toPunch) {
         System.out.println("Effects of special move for 'Burglar' has ended!\n");
