@@ -1,10 +1,12 @@
 package se.meteturkan.characters;
 
 
+import java.util.Random;
+
 public class Residence extends Entity {
     // Player constructor with extra name parameter
-    public Residence(String name, float healt, float attackPoint, float defensePoint) {
-        super(name, healt, attackPoint, defensePoint);
+    public Residence(String name, float healt, float attackPoint, float defensePoint, Random random) {
+        super(name, healt, attackPoint, defensePoint, random);
     }
 
     // Inside Residence.java

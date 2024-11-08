@@ -23,15 +23,15 @@ public class Game {
 
 
     // Declaring burglar instance as a concrete subclass
-    private Burglar burglar = new Burglar("Burglar", 80, 12, 4);
-    private Residence residence = new Residence("Residence", 100, 7, 5);
+    private Burglar burglar = new Burglar("Burglar", 80, 12, 4, random);
+    private Residence residence = new Residence("Residence", 100, 7, 5, random);
 
 
     // Constructor
     public Game(Scanner scanner, OptionController controller) {
         this.scanner = scanner;
         this.controller = controller; // Initialize OptionController with the injected scanner
-        this.fight = new Fight(controller, scanner, menu, burglar, residence); // Initializing fight with the injected OptionController
+        this.fight = new Fight(controller, scanner, menu, burglar, residence, random); // Initializing fight with the injected OptionController
 
         // Initialize rooms
         initializeRooms();

@@ -1,9 +1,11 @@
 package se.meteturkan.characters;
 
+import java.util.Random;
+
 public class Burglar extends Entity {
     // Burglar constructor
-    public Burglar(String name, float health, float attackPoint, float defensePoint) {
-        super(name, health, attackPoint, defensePoint);
+    public Burglar(String name, float health, float attackPoint, float defensePoint, Random random) {
+        super(name, health, attackPoint, defensePoint, random);
     }
 
     @Override

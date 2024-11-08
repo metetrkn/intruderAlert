@@ -32,7 +32,6 @@ public class OptionController {
             }
         } while (true); // Continue loop indefinitely until valid input
 
-        scanner.close(); 
         return userInput; // Return user choice
     }
 }

@@ -8,19 +8,19 @@ public abstract class Entity {
     private float health;
     private float attackPoint;
     private float defensePoint;
+    private Random random; // dependency injection, random object instantiated in game class and sent here
 
 
-    // There is random instance in game, send it to here!
-    private Random random = new Random(); // Instantiating random object
     private NumberRound round = new NumberRound(); // Instantiating rounder to 2nd decimal
     private byte specialMoveTurns = 0; // Tracks how many turns after special move activates
     private boolean specialMoveActive = false; // If special move is active
 
-    public Entity(String name, float health, float attackPoint, float defensePoint) {
+    public Entity(String name, float health, float attackPoint, float defensePoint, Random random) {
         this.name = name;
         this.health = health;
         this.attackPoint = attackPoint;
         this.defensePoint = defensePoint;
+        this.random = random;
     }
 
     public String getName() {

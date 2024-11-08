@@ -6,10 +6,12 @@ import se.meteturkan.characters.Burglar;
 import se.meteturkan.common.OptionController;
 import se.meteturkan.game.Menu;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Fight {
     private static boolean running = true; // Control the fight loop
     private final Menu menu; // Dependency injection, declaring menu
+    private final Random random;
     private OptionController controller; // Creating OptionController object with scanner as parameter
     private static Scanner scanner;
     private Burglar burglar;
@@ -17,14 +19,16 @@ public class Fight {
 
 
 
-    public Fight(OptionController optionController, Scanner scanner, Menu menu, Burglar burglar, Residence residence) {
+    public Fight(OptionController optionController, Scanner scanner, Menu menu, Burglar burglar,
+                 Residence residence, Random random) {
         this.controller = optionController;
         this.scanner = scanner;
         this.menu = menu;
         this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
         this.burglar = burglar;
         this.residence = residence;
-        this.residenceBaseHealth = residence.getHealt();;
+        this.residenceBaseHealth = residence.getHealt();
+        this.random = random;
     }
 
 
