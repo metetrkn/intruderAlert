@@ -95,6 +95,7 @@ public abstract class Entity {
         setAttackPoint(getAttackPoint() + change);
     }
 
+    // Abstract methods
     public abstract void specialMove(Entity toPunch);
 
     public abstract void revertSpecialMove(Entity toPunch);
