@@ -8,6 +8,7 @@ import java.util.Random;
 
 public class FightTest {
     Random random = new Random(); // Instantiating random object for test purposes
+
     @Test
     public void testPunchAttack() {
         // Creating instances of Burglar and Residence with initial values
