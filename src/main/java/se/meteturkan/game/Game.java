@@ -168,13 +168,7 @@ public class Game {
 
             // Prompting user to input next room choice
             System.out.print("\nNext room: ");
-            int userChoice = scanner.nextInt();
-            scanner.nextLine(); // Consuming scanner
-
-            if (!map.containsKey(userChoice)) {
-                System.err.println("Invalid room choice.");
-                continue; // Skip the rest of the loop if the input is invalid
-            }
+            int userChoice = controller.checker(1, roomNum);
 
             residenceCurrentRoom = map.get(userChoice);
 
