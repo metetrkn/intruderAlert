@@ -10,16 +10,16 @@ import se.meteturkan.fight.Fight;
 import se.meteturkan.rooms.Room;
 import se.meteturkan.rooms.RoomFactory;
 import java.util.HashMap;
-import se.meteturkan.rooms.Materials;
+
 
 public class Game {
     private Scanner scanner; // Declare scanner for dependency injection
     private OptionController controller; // Declare OptionController for dependency injection
-    private Menu menu = new Menu(); // Creating an instance of menu class
     private Fight fight;
     private Room residenceCurrentRoom;
     private Room burglarCurrentRoom;
     private Random random = new Random();
+    private Menu menu = new Menu(); // Creating an instance of menu class
 
 
     // Declaring burglar instance as a concrete subclass
@@ -92,6 +92,10 @@ public class Game {
 
         // Setting starting rooms of gamers
         this.residenceCurrentRoom = livingRoom;
+
+        // Burglar starts from office but in game mechanics its next choice by random
+        // will be either 'hall' or 'bathroom' and game starts there
+        // Burglar initial room is either "hall" or "bathroom"
         this.burglarCurrentRoom = office;
     }
 
@@ -110,13 +114,7 @@ public class Game {
             System.exit(0); // Closing the system
         }
     }
-
-
-    // Initialize fight
-    public void initGame() {
-        tourRooms(); // Traveling through rooms until players meet and fight against each other
-    }
-
+1
 
     // Simulating residence and burglar moving around rooms
     public void tourRooms() {
@@ -178,7 +176,6 @@ public class Game {
                 if (burglar.isConscious() && residence.isConscious()) {
                     fight.startFight(); // Init fight
                 }
-
             }
         }
     }

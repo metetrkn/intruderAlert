@@ -11,7 +11,7 @@ public class Main{
     public static void main(String[] args) {
         Game game = new Game(scanner, controller); // Creating an instance of game class
         game.initMenu(); // Initializing menu option
-        game.initGame(); // Initializing fighting
+        game.tourRooms(); // Initializing fighting
 
         scanner.close(); // Closing the scanner
     }
