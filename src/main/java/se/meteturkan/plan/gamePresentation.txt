@@ -1,12 +1,12 @@
-1- Dependency injection used
-2- There are seven rooms in the game (structure bk. houseStructure.jpg)
-3- Residence starts from livings room, residence starts in a random room
-4- Both players travel through rooms, and game tracks and give feedbacks about players rooms in each turns
-5- If residence dies, games ends; if burglar dies, residence needs to go office and call the police to end game or can choose  to travel around house
-6- Both user have their special skills which can be triggered every fighting turn by 25%
-7- Residence users special skill increased defence for only 3 turn
-8- Burglar special skill increased attack for only 3 turn
-9- Every input by user is controlled, user prompts until give a valid input value
-10- There are 2 materials both which increase attack point, frying pan in kitchen, scissor in bathroom
-11- Attacks are dynamic. changes between [0.5x - 1.5x]
-12- damage calculation based on base damage, random multiplier, opponent defence, possed material, special attack
+1. **Dependency injection** is used.
+2. The game has **seven rooms** (see house structure).
+3. The **residence** starts in the living room, while the **burglar** starts in either the hall or bathroom (randomly chosen).
+4. Both players travel through rooms, and the game provides **feedback** on their location every turn.
+5. If the **residence** dies, the game ends; if the **burglar** dies, the residence must go to the office to call the police or can choose to roam the house.
+6. Both players have special skills triggered **25% of the time** during combat.
+7. The **residence**'s special skill boosts **defense** for 3 turns.
+8. The **burglar**'s special skill boosts **attack** for 3 turns.
+9. **User inputs** are controlled until a valid value is entered.
+10. There are **2 items** that increase attack: a frying pan (kitchen) and scissors (bathroom).
+11. **Attack damage** is dynamic, varying between **0.5x and 1.5x**.
+12. **Damage calculation**: based on base damage, random multiplier, opponent's defense, item possession, and special attack.

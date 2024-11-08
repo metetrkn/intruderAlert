@@ -114,7 +114,7 @@ public class Game {
             System.exit(0); // Closing the system
         }
     }
-1
+
 
     // Simulating residence and burglar moving around rooms
     public void tourRooms() {
