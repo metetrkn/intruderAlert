@@ -8,6 +8,9 @@ public abstract class Entity {
     private float health;
     private float attackPoint;
     private float defensePoint;
+
+
+    // There is random instance in game, send it to here!
     private Random random = new Random(); // Instantiating random object
     private NumberRound round = new NumberRound(); // Instantiating rounder to 2nd decimal
     private byte specialMoveTurns = 0; // Tracks how many turns after special move activates
