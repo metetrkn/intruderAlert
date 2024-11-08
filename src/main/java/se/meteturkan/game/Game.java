@@ -166,8 +166,8 @@ public class Game {
                 roomNum++;
             }
 
+            System.out.println(); // Leaving one space for choice prompt
             // Prompting user to input next room choice
-            System.out.print("\nNext room: ");
             int userChoice = controller.checker(1, roomNum); // User's next room choice as int
 
             residenceCurrentRoom = map.get(userChoice); // Updating user's current room as choice
@@ -180,9 +180,6 @@ public class Game {
                 }
 
             }
-
-            // Resetting hashmap for next iteration
-            map.clear();
         }
     }
 }
