@@ -164,9 +164,17 @@ public class Game {
                 roomNum++;
             }
 
+            // Exit option
+            System.out.println("0 - Exit");
+
             System.out.println(); // Leaving one space for choice prompt
             // Prompting user to input next room choice
-            int userChoice = controller.checker(1, roomNum); // User's next room choice as int
+            int userChoice = controller.checker(0, roomNum); // User's next room choice as int
+
+            // Exiting the game if user choice to exit (0)
+            if (userChoice == 0) {
+                menu.exitSystem();
+            }
 
             residenceCurrentRoom = map.get(userChoice); // Updating user's current room as choice
 
