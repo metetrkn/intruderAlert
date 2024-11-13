@@ -50,12 +50,12 @@ public class Game {
 
         // Connecting rooms based on house plan
         /**
-         (BATHROOM)   <==>    (OFFICE)
-         ^                      ^
-         ||                     ||
-         v                      v
+                            (BATHROOM)   <==>    (OFFICE)
+                                ^                   ^
+                               ||                  ||
+                               v                   v
          (KITCHEN)   <==>  (LIVING ROOM)  <==>      (HALL)
-         ^                   ^
+          ^                   ^
          ||                  ||
          v                   v
          (HALL-2)    <==>  (BEDROOM)
