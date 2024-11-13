@@ -60,35 +60,14 @@ public class Game {
          v                   v
          (HALL-2)    <==>  (BEDROOM)
          */
-        // Connecting living room to related rooms
-        livingRoom.connectRoom(kitchen);
-        livingRoom.connectRoom(bathroom);
-        livingRoom.connectRoom(hall);
-        livingRoom.connectRoom(bedroom);
-
-        // Connecting bathroom to related rooms
-        bathroom.connectRoom(livingRoom);
-        bathroom.connectRoom(office);
-
-        // Connecting office to related rooms
-        office.connectRoom(bathroom);
-        office.connectRoom(hall);
-
-        // Connecting hall to related rooms
-        hall.connectRoom(livingRoom);
-        hall.connectRoom(office);
-
-        // Connecting bedroom to related rooms
-        bedroom.connectRoom(livingRoom);
-        bedroom.connectRoom(hall2);
-
-        // Connecting hall-2 to related rooms
-        hall2.connectRoom(bedroom);
-        hall2.connectRoom(kitchen);
-
-        // Connecting kitchen to related rooms
-        kitchen.connectRoom(hall2);
-        kitchen.connectRoom(livingRoom);
+        // Connecting rooms based on house plan
+        livingRoom.connectRooms(kitchen, bathroom, hall, bedroom);
+        bathroom.connectRooms(livingRoom, office);
+        office.connectRooms(bathroom, hall);
+        hall.connectRooms(livingRoom, office);
+        bedroom.connectRooms(livingRoom, hall2);
+        hall2.connectRooms(bedroom, kitchen);
+        kitchen.connectRooms(hall2, livingRoom);
 
         // Setting starting rooms of gamers
         this.residenceCurrentRoom = livingRoom;
@@ -127,8 +106,7 @@ public class Game {
 
             // Looping through all connected rooms to current one for burglar
             for (Room connectedRoom : burglarCurrentRoom.getConnectedRooms()) {
-                map.put(roomNum, connectedRoom); // Creating hashmap for future use - players choice
-                roomNum++;
+                map.put(roomNum++, connectedRoom);
             }
 
             int randomRoom = 1 + random.nextInt(roomNum - 1); // Getting random room number from hashmap automatically for burglar
@@ -145,10 +123,10 @@ public class Game {
             map.clear();
             roomNum = 1;
 
-            menu.printStringWithDelay("Residence is currently at: " + residenceCurrentRoom.getRoomName() + "\n\n", 10); // Residence current location in house
-            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+            menu.printStringWithDelay("Residence is currently at: " + residenceCurrentRoom.getRoomName() + "\n\n", 10);
+            System.out.println("❂".repeat(64));
             menu.printStringWithDelay(residenceCurrentRoom.getDescription(), 10);
-            System.out.println("❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂❂");
+            System.out.println("❂".repeat(64));
 
             // If there is a material in current room and user takes it
             if (residenceCurrentRoom.getMaterial()) {
@@ -159,15 +137,13 @@ public class Game {
 
             // Looping through all connected rooms to current one for residence
             for (Room connectedRoom : residenceCurrentRoom.getConnectedRooms()) {
-                System.out.println(roomNum + " - " + connectedRoom.getRoomName()); // Listing rooms
-                map.put(roomNum, connectedRoom); // Creating hashmap for future use - players choice
-                roomNum++;
+                System.out.println(roomNum + " - " + connectedRoom.getRoomName());
+                map.put(roomNum++, connectedRoom);
             }
 
             // Exit option
-            System.out.println("0 - Exit");
+            System.out.println("0 - Exit\n");
 
-            System.out.println(); // Leaving one space for choice prompt
             // Prompting user to input next room choice
             int userChoice = controller.checker(0, roomNum); // User's next room choice as int
 
@@ -179,11 +155,8 @@ public class Game {
             residenceCurrentRoom = map.get(userChoice); // Updating user's current room as choice
 
             // A fight begins if the residence and burglar are in the same room
-            if (residenceCurrentRoom == burglarCurrentRoom) {
-                // and if both are conscious
-                if (burglar.isConscious() && residence.isConscious()) {
-                    fight.startFight(); // Init fight
-                }
+            if (residenceCurrentRoom == burglarCurrentRoom && burglar.isConscious() && residence.isConscious()) {
+                fight.startFight(); // Init fight
             }
         }
     }

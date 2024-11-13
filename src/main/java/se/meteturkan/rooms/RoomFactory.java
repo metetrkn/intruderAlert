@@ -6,6 +6,15 @@ import se.meteturkan.game.Menu;
 import java.util.Scanner;
 
 public class RoomFactory {
+    /**
+     * Factory method to create different types of rooms based on the room type string.
+     * @param roomType Type of room to be created.
+     * @param scanner Scanner instance for user input.
+     * @param menu Menu instance to handle menu display.
+     * @param controller OptionController instance to manage user input validation.
+     * @return A specific room instance based on the roomType.
+     * @throws IllegalArgumentException if the roomType is unknown.
+     */
     // Factory method to create Room instances
     public static Room createRoom(String roomType, Scanner scanner, Menu menu, OptionController controller) {
         switch (roomType) {

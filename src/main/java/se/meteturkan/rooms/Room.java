@@ -35,9 +35,11 @@ public abstract class Room {
         this.roomName = roomName;
     }
 
-    // Method to connect this room to another room
-    public void connectRoom(Room room) {
-        connectedRooms.add(room);
+    // Method to connect this room to one or multiple rooms
+    public void connectRooms(Room... rooms) {
+        for (Room room : rooms) {
+            connectedRooms.add(room);
+        }
     }
 
     // Room describing

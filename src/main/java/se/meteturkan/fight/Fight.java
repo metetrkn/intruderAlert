@@ -12,10 +12,12 @@ public class Fight {
     private static boolean running = true; // Control the fight loop
     private final Menu menu; // Dependency injection, declaring menu
     private final Random random;
-    private OptionController controller; // Creating OptionController object with scanner as parameter
-    private static Scanner scanner;
-    private Burglar burglar;
-    private Residence residence;
+    private final OptionController controller; // Creating OptionController object with scanner as parameter
+    private final Scanner scanner;
+    private final Burglar burglar;
+    private final Residence residence;
+    private final float burglarBaseHealth; // Store initial health of the burglar
+    private final float residenceBaseHealth; // Store initial health of the residence
 
 
 
@@ -24,18 +26,12 @@ public class Fight {
         this.controller = optionController;
         this.scanner = scanner;
         this.menu = menu;
-        this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
         this.burglar = burglar;
         this.residence = residence;
+        this.burglarBaseHealth = burglar.getHealt(); // Initialize the base health of burglar
         this.residenceBaseHealth = residence.getHealt();
         this.random = random;
     }
-
-
-
-
-    private final float burglarBaseHealth; // Store initial health of the burglar
-    private float residenceBaseHealth; // Store initial health of the residence
 
 
     // Execute an attack from attacker to defender
@@ -97,9 +93,6 @@ public class Fight {
         System.out.println(skull);
         System.out.printf("\"\"The %s has been neutralized. RIP!\"\"\n", entity);
         System.out.println(skull);
-
-
-        int input = 0; // User choice to call the police or hide the body
 
         // If the resident neutralizes the burglar, prompt to call the police.
         if (entity.equals("residence")) {

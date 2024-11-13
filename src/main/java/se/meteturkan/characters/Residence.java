@@ -9,23 +9,25 @@ public class Residence extends Entity {
         super(name, healt, attackPoint, defensePoint, random);
     }
 
-    // Inside Residence.java
+    // Increase attack method
     public void increaseAttack(float points) {
         setAttackPoint(getAttackPoint() + points); // Increases the attack points
         System.out.println(this.getName() + "'s attack has increased by " + points + " points.");
     }
 
 
+    // Special move: Residence uses the motorcycle helmet to increase defense
     @Override
     public void specialMove(Entity toPunch) {
         System.out.println("Residence finds his motorcycle helmet on the corner!\n" +
-                "His defence increases drastically!\n");
-        increaseDefence(15.0F);
+                "His defense increases drastically!\n");
+        increaseDefence(15.0F); // Increase defense by 15
     }
 
+    // Reverting special move: Restore defense to normal
     @Override
     public void revertSpecialMove(Entity toPunch) {
-        System.out.println("Effects of special move for 'Residence' has ended!\n");
-        increaseDefence(-15.0F);
+        System.out.println("Effects of special move for 'Residence' have ended!\n");
+        increaseDefence(-15.0F); // Decrease defense back to original value
     }
 }

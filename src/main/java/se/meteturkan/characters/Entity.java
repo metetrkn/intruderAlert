@@ -9,8 +9,6 @@ public abstract class Entity {
     private float attackPoint;
     private float defensePoint;
     private Random random; // dependency injection, random object instantiated in game class and sent here
-
-
     private NumberRound round = new NumberRound(); // Instantiating rounder to 2nd decimal
     private byte specialMoveTurns = 0; // Tracks how many turns after special move activates
     private boolean specialMoveActive = false; // If special move is active
@@ -47,6 +45,7 @@ public abstract class Entity {
         this.defensePoint = round.roundToTwoDecimals(newAmount);
     }
 
+
     // Method to perform an attack on another entity
     public void punch(Entity toPunch) {
         if (!specialMoveActive && random.nextInt(4) == 0) {
@@ -63,21 +62,22 @@ public abstract class Entity {
             }
         }
 
-        // Calculate base damage
-        float baseDamage = this.attackPoint - toPunch.getDefensePoint();
-
-        // Generate a random multiplier between 0.5 and 1.5
-        float damageMultiplier = (float) (0.5 + (random.nextFloat())); // random value in [0.5, 1.5]
-
-        // Calculate final damage applying the multiplier
-        float damage = round.roundToTwoDecimals((float) Math.max(baseDamage * damageMultiplier, 0)); // Ensure damage is non-negative
-
-        // Apply damage to the target entity
+        // Calculate and apply damage
+        float damage = calculateDamage(toPunch);
         toPunch.takeHit(damage);
 
         // Print attack details including damage received by opponent
         System.out.println(this.name + " hits ===> " + toPunch.getName() + " (" + damage + " damage)!");
     }
+
+
+    // Helper method to calculate damage
+    private float calculateDamage(Entity toPunch) {
+        float baseDamage = this.attackPoint - toPunch.getDefensePoint();
+        float damageMultiplier = 0.5f + random.nextFloat(); // random value in [0.5, 1.5]
+        return round.roundToTwoDecimals(Math.max(baseDamage * damageMultiplier, 0)); // Ensure damage is non-negative
+    }
+
 
     public void takeHit(float damage) {
         this.health -= damage;
